@@ -90,4 +90,23 @@ public static class TransformExtensions {
         }
     }
     
+    
+    /// <summary>
+    /// 设置为另一个物体的子物体，并且属性归为默认
+    /// </summary>
+    /// <param name="trans"></param>
+    /// <param name="parent"></param>
+    public static void SetParentIdentical(this Transform trans, Transform parent)
+    {
+        trans.SetParent(parent);
+        trans.Identity();
+    }
+    
+    public static void Identity(this Transform t)
+    {
+        t.localPosition = Vector3.zero;
+        t.localRotation = Quaternion.identity;
+        t.localScale = Vector3.one;
+    }
+    
 }
