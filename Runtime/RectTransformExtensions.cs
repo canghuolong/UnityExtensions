@@ -14,4 +14,14 @@ public static class RectTransformExtensions
         if (preservePivot)
             rt.pivot = piv;
     }
+    
+    public static void SetWidth(this RectTransform rect, float width)
+    {
+        rect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, width);
+    }
+
+    public static void SetHeight(this RectTransform rect, float height)
+    {
+        rect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, height);
+    }
 }
